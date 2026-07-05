@@ -134,3 +134,33 @@ navDots.forEach((dot) => {
 if (sectionEls.length) {
   setActiveSection(sectionEls[0].id, sectionEls[0].dataset.path);
 }
+
+// =============================================================
+// SCROLL REVEAL — generic and reusable. Any element with class
+// "reveal" (gallery photos, future callouts, etc.) fades/slides
+// in the first time it enters the viewport. Nothing to configure
+// per-page: just add class="reveal" to an element in the markup.
+// =============================================================
+if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+  const revealEls = document.querySelectorAll('.reveal');
+
+  revealEls.forEach((el) => el.classList.add('reveal-armed'));
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  revealEls.forEach((el) => revealObserver.observe(el));
+}
+// If reduced motion is preferred, or IntersectionObserver isn't
+// supported, .reveal elements are simply left in their default
+// (fully visible, untransformed) state — see the CSS comment
+// above .reveal in case-study.css.

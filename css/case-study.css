@@ -226,6 +226,75 @@
   border-top: 1px solid var(--line-soft);
 }
 
+/* ---- Gallery (recognition photos + interface screenshots) ---- */
+.gallery-subhead {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: var(--space-3) 0 var(--space-2);
+}
+
+.gallery-recognition {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.gallery-screens {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.gallery-photo {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.gallery-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gallery-caption {
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.gallery-caption strong {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  color: var(--ink);
+}
+
+/* Scroll-reveal utility — reusable on any element, any page.
+   Safe by default: an element with only .reveal (no JS) stays
+   fully visible. JS (below) arms it right before observing it,
+   so the hidden state only ever exists when the animation can
+   actually run. Respects prefers-reduced-motion automatically,
+   since case-study.js never arms anything in that mode. */
+.reveal {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.reveal-armed:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* =========================================================
    RESPONSIVE
    ========================================================= */
