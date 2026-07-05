@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nahid Jahan Bhuiyan — Full-Stack Developer &amp; UI/UX Designer</title>
+  <meta name="description" content="Portfolio of Nahid Jahan Bhuiyan — Full-Stack Developer & UI/UX Designer. Web development, database design, and cybersecurity-minded engineering." />
+
+  <!-- Basic hardening: restrict where scripts/styles/fonts may load from.
+       For production, set these as real HTTP response headers on your host
+       (CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy) — a
+       meta tag can only cover CSP, not the others. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cdn.jsdelivr.net; base-uri 'self'; form-action 'self'; frame-ancestors 'none';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Fixed 3D background canvas. Sits at z-index:-1, behind all UI. -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Skip link for keyboard/screen-reader users -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Fixed left rail: identity + section nav -->
+  <header class="rail">
+    <div class="rail-top">
+      <a href="#hero" class="logo" aria-label="Back to top">NJB</a>
+      <div class="status-pill">
+        <span class="status-dot" aria-hidden="true"></span>
+        Available for Projects
+      </div>
+    </div>
+
+    <nav class="rail-nav" aria-label="Section navigation">
+      <button class="nav-dot" data-target="hero" aria-label="Go to Hero section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Hero</span>
+      </button>
+      <button class="nav-dot" data-target="about" aria-label="Go to About section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">About</span>
+      </button>
+      <button class="nav-dot" data-target="projects" aria-label="Go to Projects section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Projects</span>
+      </button>
+      <button class="nav-dot" data-target="skills" aria-label="Go to Skills section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Skills</span>
+      </button>
+      <button class="nav-dot" data-target="achievements" aria-label="Go to Achievements section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Achievements</span>
+      </button>
+      <button class="nav-dot" data-target="contact" aria-label="Go to Contact section">
+        <span class="nav-dot-mark"></span><span class="nav-dot-label">Contact</span>
+      </button>
+    </nav>
+
+    <div class="rail-bottom">
+      <a href="https://github.com/NahidJB1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+      <a href="https://www.instagram.com/nahidjahanbhuiyan" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>
+    </div>
+  </header>
+
+  <!-- Terminal-style breadcrumb, mirrors current section as a filesystem path -->
+  <div class="terminal-bar" aria-hidden="true">
+    <span class="terminal-path" id="terminal-path">guest@njb:~$ whoami</span><span class="terminal-cursor">_</span>
+  </div>
+
+  <main id="main" class="content">
+
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="panel" data-path="guest@njb:~$ whoami">
+      <div class="glass hero-glass">
+        <p class="eyebrow">~/</p>
+        <p class="role-line">Full-Stack Developer &amp; UI/UX Designer</p>
+        <h1 class="hero-name">Nahid Jahan<br />Bhuiyan</h1>
+        <p class="tagline">Crafting digital experiences that live at the intersection of performance and design.</p>
+        <p class="hero-bio">Full-Stack Developer &amp; UI/UX Designer from Bangladesh, studying IT at City University Malaysia.</p>
+        <div class="cta-row">
+          <a href="#projects" class="btn btn-primary">View Work</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+          <a href="assets/NJB_CV.pdf" class="btn btn-ghost" download rel="noopener noreferrer">Download CV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="panel" data-path="guest@njb:~$ cat about.md">
+      <div class="glass">
+        <p class="eyebrow">~/about</p>
+        <h2>Who I Am</h2>
+        <p class="body-text">
+          Born and raised in Bangladesh where I completed my SSC and HSC in Science, I moved to Malaysia to
+          pursue my Bachelor's in Information Technology at City University Malaysia. I have a passion for
+          building things that matter — from agency websites serving 12 countries to award-winning hackathon
+          projects. Every line of code I write is powered by curiosity and a drive to solve real problems.
+          When I'm not building, I'm competing. I believe the best software is the kind that quietly changes
+          someone's day.
+        </p>
+
+        <div class="stats-row">
+          <div class="stat">
+            <span class="stat-number">6</span>
+            <span class="stat-label">Live Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Countries Reached</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">1</span>
+            <span class="stat-label">Hackathon Win</span>
+          </div>
+        </div>
+
+        <div class="badges-grid">
+          <div class="badge">
+            <span class="badge-title">Bachelor of IT</span>
+            <span class="badge-sub">City University Malaysia</span>
+          </div>
+          <div class="badge">
+            <span class="badge-title">Hackathon Champion</span>
+            <span class="badge-sub">CityU Hackathon — FactShield</span>
+          </div>
+          <div class="badge">
+            <span class="badge-title">Hult Prize Shortlist</span>
+            <span class="badge-sub">MEDeLIFE — Healthcare Innovation</span>
+          </div>
+          <div class="badge">
+            <span class="badge-title">Full-Stack Dev</span>
+            <span class="badge-sub">Design · Build · Maintain</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="panel panel-wide" data-path="guest@njb:~/projects$ ls -la">
+      <div class="glass glass-wide">
+        <p class="eyebrow">~/projects</p>
+        <h2>Built &amp; Deployed</h2>
+
+        <div class="project-grid">
+
+          <!-- PROJECT: MEDeLIFE -->
+          <article class="project-card">
+            <!-- Placeholder thumb — swap this div for <img src="assets/projects/medelife.jpg" alt="MEDeLIFE screenshot" class="project-thumb-img"> -->
+            <div class="project-thumb"><span class="thumb-mark">ML</span></div>
+            <div class="project-body">
+              <h3>MEDeLIFE</h3>
+              <p>Final year project — a healthcare innovation platform that earned a Hult Prize shortlist. A testament to what happens when technology meets meaningful purpose.</p>
+              <div class="tag-row">
+                <span class="tag">Final Year</span>
+                <span class="tag">Healthcare</span>
+                <span class="tag">Hult Prize</span>
+              </div>
+              <div class="link-row">
+                <a href="projects/medelife.html">Case Study</a>
+                <a href="https://medelife.onestepmy.com" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT: FactShield -->
+          <article class="project-card">
+            <div class="project-thumb"><span class="thumb-mark">FS</span></div>
+            <div class="project-body">
+              <h3>FactShield</h3>
+              <p>Built for the CityU Hackathon — a misinformation-fighting platform that took home the championship. Speed, teamwork, and a problem worth solving.</p>
+              <div class="tag-row">
+                <span class="tag">Hackathon</span>
+                <span class="tag">Champion 🏆</span>
+                <span class="tag">CityU</span>
+              </div>
+              <div class="link-row">
+                <a href="/projects/factshield.html">Case Study</a>
+                <a href="https://facktshield.percentagemy.com/" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT: YS Study Focus -->
+          <article class="project-card">
+            <div class="project-thumb"><span class="thumb-mark">YS</span></div>
+            <div class="project-body">
+              <h3>YS Study Focus</h3>
+              <p>My very first professional project — a fully designed and developed agency website based in Malaysia. From concept to deployment, built and still actively maintained.</p>
+              <div class="tag-row">
+                <span class="tag">Design</span>
+                <span class="tag">Full-Stack</span>
+                <span class="tag">Active</span>
+              </div>
+              <div class="link-row">
+                <a href="/projects/ysstudyfocus.html">Case Study</a>
+                <a href="https://ysstudyfocus.com" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT: IELTS Mock -->
+          <article class="project-card">
+            <div class="project-thumb"><span class="thumb-mark">IM</span></div>
+            <div class="project-body">
+              <h3>IELTS Mock</h3>
+              <p>A free IELTS preparation platform where learners can practice all four modules and connect with speaking partners. Making quality test prep accessible to everyone.</p>
+              <div class="tag-row">
+                <span class="tag">EdTech</span>
+                <span class="tag">Full-Stack</span>
+                <span class="tag">Free</span>
+              </div>
+              <div class="link-row">
+                <a href="/projects/ieltsmock.html">Case Study</a>
+                <a href="https://ieltsmock.onestepmy.com" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT: One Step -->
+          <article class="project-card">
+            <div class="project-thumb"><span class="thumb-mark">OS</span></div>
+            <div class="project-body">
+              <h3>One Step</h3>
+              <p>A large-scale agency platform operating across approximately 12 countries. Full design and full-stack development — a project that proves scale is just a problem waiting to be solved.</p>
+              <div class="tag-row">
+                <span class="tag">Design</span>
+                <span class="tag">Full-Stack</span>
+                <span class="tag">Global</span>
+                <span class="tag">Active</span>
+              </div>
+              <div class="link-row">
+                <a href="/projects/onestepmy.html">Case Study</a>
+                <a href="https://onestepmy.com" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT: Percentage -->
+          <article class="project-card">
+            <div class="project-thumb"><span class="thumb-mark">PC</span></div>
+            <div class="project-body">
+              <h3>Percentage</h3>
+              <p>A full e-commerce clothing store — designed, developed, and actively maintained. From product listings to checkout, a complete retail experience built end-to-end.</p>
+              <div class="tag-row">
+                <span class="tag">Design</span>
+                <span class="tag">E-Commerce</span>
+                <span class="tag">Active</span>
+              </div>
+              <div class="link-row">
+                <a href="/projects/percentage.html">Case Study</a>
+                <a href="https://percentagemy.com" target="_blank" rel="noopener noreferrer">Live Site ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT: Kerja-Kad -->
+          <article class="project-card">
+            <div class="project-thumb"><span class="thumb-mark">KK</span></div>
+            <div class="project-body">
+              <h3>Kerja-Kad</h3>
+              <p>A digital identity and verification system for Malaysia's foreign workers. Reached the national finals of the Godam Lah! 2.0 Hackathon. I led the system architecture and technical prototyping.</p>
+              <div class="tag-row">
+                <span class="tag">Hackathon</span>
+                <span class="tag">Finalist</span>
+                <span class="tag">Prototype</span>
+              </div>
+              <div class="link-row">
+                <a href="/projects/kerja-kad.html">Case Study</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="panel panel-wide" data-path="guest@njb:~$ cat skills.json">
+      <div class="glass glass-wide">
+        <p class="eyebrow">~/skills</p>
+        <h2>Tech &amp; Tools</h2>
+
+        <div class="skills-grid">
+          <div class="skill-col">
+            <h3>Frontend</h3>
+            <div class="pill-row">
+              <span class="pill">HTML5</span>
+              <span class="pill">CSS3</span>
+              <span class="pill">JavaScript</span>
+              <span class="pill">React</span>
+              <span class="pill">Responsive Design</span>
+              <span class="pill">UI/UX</span>
+            </div>
+          </div>
+          <div class="skill-col">
+            <h3>Backend</h3>
+            <div class="pill-row">
+              <span class="pill">Node.js</span>
+              <span class="pill">PHP</span>
+              <span class="pill">MySQL</span>
+              <span class="pill">REST APIs</span>
+              <span class="pill">Database Design</span>
+            </div>
+          </div>
+          <div class="skill-col">
+            <h3>Design</h3>
+            <div class="pill-row">
+              <span class="pill">Figma</span>
+              <span class="pill">UI Design</span>
+              <span class="pill">Branding</span>
+              <span class="pill">Prototyping</span>
+              <span class="pill">Design Systems</span>
+            </div>
+          </div>
+          <div class="skill-col">
+            <h3>DevOps &amp; Tools</h3>
+            <div class="pill-row">
+              <span class="pill">Git</span>
+              <span class="pill">GitHub</span>
+              <span class="pill">Hosting &amp; Deployment</span>
+              <span class="pill">Domain Management</span>
+              <span class="pill">SEO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section id="achievements" class="panel panel-wide" data-path="guest@njb:~$ ls -la ~/achievements">
+      <div class="glass glass-wide">
+        <p class="eyebrow">~/achievements</p>
+        <h2>Moments &amp; Milestones</h2>
+
+        <div class="achievements-grid">
+
+          <figure class="achievement-card">
+            <!-- Placeholder — swap for <img src="assets/achievements/deans-list.jpg" alt="..."> -->
+            <div class="achievement-photo"><span class="thumb-mark">DL</span></div>
+            <figcaption>
+              <strong>Dean's List Award</strong>
+              Awarded the Dean's List certificate for exemplary academic achievement in Semester January 2026
+              for the Bachelor of Information Technology (Hons) program at City University Malaysia.
+            </figcaption>
+          </figure>
+
+          <figure class="achievement-card">
+            <div class="achievement-photo"><span class="thumb-mark">CH</span></div>
+            <figcaption>
+              <strong>CityU Fusion Hackathon 1.0 Champions</strong>
+              My teammate Mr. Shihab Dewan and I were declared champions for 'CityU Fusion Hackathon 1.0 - 2026'.
+              Receiving our certificates, medals, and presentation cheque from CityU Dean, Assoc Prof Dr. Nurul
+              Hafeez Ibrahim for our project 'FactShield'.
+            </figcaption>
+          </figure>
+
+          <figure class="achievement-card">
+            <div class="achievement-photo"><span class="thumb-mark">MD</span></div>
+            <figcaption>
+              <strong>The Winning Medals &amp; Champion's Hardware</strong>
+              The championship medals proudly received for 'CityU Fusion Hackathon 1.0 - 2026'.
+            </figcaption>
+          </figure>
+
+          <figure class="achievement-card">
+            <div class="achievement-photo"><span class="thumb-mark">H26</span></div>
+            <figcaption>
+              <strong>Hult Prize 2026 Shortlist</strong>
+              My team and I with the Dean, Assoc Prof Dr. Nurul Hafeez Ibrahim, after MEDeLIFE was officially
+              shortlisted for the Hult Prize 2026.
+            </figcaption>
+          </figure>
+
+          <figure class="achievement-card">
+            <div class="achievement-photo"><span class="thumb-mark">H25</span></div>
+            <figcaption>
+              <strong>Hult Prize 2025 Runner-up</strong>
+              My teammate Mr. Molla Rayhan and I after our team was announced runner-up in the Hult Prize 2025
+              for our project MEDeLIFE.
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="panel" data-path="guest@njb:~$ ping njb --connect">
+      <div class="glass">
+        <p class="eyebrow">~/contact</p>
+        <h2>Let's Connect</h2>
+        <p class="body-text">
+          Got a project, a collab idea, or just want to say hi? I'm always open to interesting conversations
+          and new opportunities.
+        </p>
+
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Email</span>
+            <a href="mailto:njb@nahidjahanbhuiyan.com">njb@nahidjahanbhuiyan.com</a>
+          </li>
+          <li>
+            <span class="contact-label">Email</span>
+            <a href="mailto:nahidjahanb1@gmail.com">nahidjahanb1@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-label">WhatsApp (MY)</span>
+            <a href="https://wa.me/601119359497" target="_blank" rel="noopener noreferrer">+60 111 9359497</a>
+          </li>
+          <li>
+            <span class="contact-label">WhatsApp (BD)</span>
+            <a href="https://wa.me/8801714640537" target="_blank" rel="noopener noreferrer">+880 1714640537</a>
+          </li>
+        </ul>
+
+        <div class="socials-row">
+          <a href="https://www.facebook.com/nahidjahanbhuiyan" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://www.instagram.com/nahidjahanbhuiyan" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://github.com/NahidJB1" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+
+        <p class="footer-note">© 2026 Nahid Jahan Bhuiyan. Built with Three.js &amp; GSAP.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

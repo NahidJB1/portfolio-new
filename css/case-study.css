@@ -1,0 +1,245 @@
+/* =========================================================
+   CASE STUDY TEMPLATE STYLES
+   Additive to style.css — same design tokens, same rail/glass/
+   terminal components. This file only adds what case-study
+   pages need on top of that shared system. Load AFTER style.css.
+   Reused as-is by every future case study page.
+   ========================================================= */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  margin-bottom: var(--space-2);
+  transition: color 0.2s ease;
+}
+.back-link:hover,
+.back-link:focus-visible {
+  color: var(--ink);
+}
+
+/* ---- Hero meta grid ---- */
+.hero-tags {
+  margin-bottom: var(--space-3);
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--line-soft);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.meta-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.meta-value {
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.tech-pills {
+  margin-top: var(--space-3);
+}
+
+/* ---- Problem cards ---- */
+.problem-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  margin: var(--space-3) 0 var(--space-4);
+}
+
+.problem-card {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.problem-card h3 {
+  font-size: 0.88rem;
+  margin-bottom: 0.4rem;
+}
+
+.problem-card p {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.stat-callout {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  background: var(--glass-bg-strong);
+}
+
+.stat-callout .stat-number {
+  font-size: 2.4rem;
+}
+
+.stat-callout-text {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  max-width: 40ch;
+}
+
+.stat-callout-text cite {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  color: var(--ink-faint);
+  font-style: normal;
+}
+
+/* ---- Solution / comment callout ---- */
+.callout-comment {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--ink);
+  border-left: 2px solid var(--line);
+  padding: var(--space-2) var(--space-3);
+  margin: var(--space-3) 0 var(--space-4);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.callout-comment span {
+  color: var(--ink-faint);
+}
+
+/* ---- Role cards (tri-role architecture) ---- */
+.role-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  margin: var(--space-3) 0 var(--space-4);
+}
+
+.role-card {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.role-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+
+.role-sub {
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  margin-bottom: var(--space-1);
+}
+
+.role-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.role-card li {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  padding-left: 0.9rem;
+  position: relative;
+}
+
+.role-card li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--ink-faint);
+}
+
+/* ---- Feature highlight grid ---- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  margin: var(--space-3) 0 var(--space-4);
+}
+
+.feature-card {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+}
+
+.feature-card h3 {
+  font-size: 0.88rem;
+  margin-bottom: 0.4rem;
+}
+
+.feature-card p {
+  font-size: 0.83rem;
+  color: var(--ink-muted);
+}
+
+/* ---- Architecture / ASCII diagram ---- */
+.ascii-diagram {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  line-height: 1.4;
+  color: var(--ink-muted);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  overflow-x: auto;
+  margin: var(--space-3) 0 var(--space-4);
+  background: rgba(255, 255, 255, 0.02);
+  white-space: pre;
+}
+
+/* ---- Closing CTA ---- */
+.closing-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--line-soft);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 980px) {
+  .meta-grid,
+  .problem-cards,
+  .role-cards,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 840px) {
+  .meta-grid {
+    margin: var(--space-3) 0;
+  }
+}
